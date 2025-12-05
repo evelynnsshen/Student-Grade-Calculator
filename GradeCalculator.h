@@ -1,5 +1,5 @@
-#ifndef GradeCalculator_H
-#define GradeCalculator_H
+#ifndef GRADECALCULATOR_H
+#define GRADECALCULATOR_H
 
 class GradeCalc 
 {
@@ -33,7 +33,9 @@ class Midterm : public GradeCalc
 class Final : public GradeCalc 
 {
     public: 
-    virtual double printFGrade(); 
+    virtual double printGrade(); 
     private: 
     double FinalScore; 
 };
+
+#endif
