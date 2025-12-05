@@ -10,7 +10,7 @@ class GradeCalc
     void AskGrades();
     private: 
     double finalGrade;
-}
+};
 
 class Homework : public GradeCalc
 {
@@ -19,7 +19,7 @@ class Homework : public GradeCalc
     virtual double printGrade(); 
     private: 
     double HWScores[10];  
-}
+};
 
 class Midterm : public GradeCalc
 {
@@ -28,7 +28,7 @@ class Midterm : public GradeCalc
     virtual double printGrade(); 
     private: 
     double MTScores[2]; 
-}
+};
 
 class Final : public GradeCalc 
 {
@@ -36,4 +36,4 @@ class Final : public GradeCalc
     virtual double printFGrade(); 
     private: 
     double FinalScore; 
-}
+};
