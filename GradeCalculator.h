@@ -3,38 +3,56 @@
 
 class GradeCalc 
 {
-    public: 
-    GradeCalc(); 
-    double CalcGrades(); 
-    virtual double printGrade(); 
-    void AskGrades();
-    private: 
+public: 
+    GradeCalc();
+    virtual ~GradeCalc() {}
+
+    virtual void AskGrades() = 0;
+    virtual double CalcGrades() = 0;
+    virtual double printGrade() = 0;
+
+protected:
     double finalGrade;
 };
 
 class Homework : public GradeCalc
 {
-    public: 
+public:
+    Homework();  
     double HWAvg(); 
-    virtual double printGrade(); 
-    private: 
+
+    void AskGrades();
+    double CalcGrades();
+    double printGrade();
+
+private: 
     double HWScores[10];  
 };
 
 class Midterm : public GradeCalc
 {
-    public: 
+public: 
+    Midterm(); 
     double MTAvg(); 
-    virtual double printGrade(); 
-    private: 
+
+    void AskGrades();
+    double CalcGrades();
+    double printGrade();
+
+private: 
     double MTScores[2]; 
 };
 
 class Final : public GradeCalc 
 {
-    public: 
-    virtual double printGrade(); 
-    private: 
+public: 
+    Final(); 
+
+    void AskGrades();
+    double CalcGrades();
+    double printGrade();
+
+private: 
     double FinalScore; 
 };
 
