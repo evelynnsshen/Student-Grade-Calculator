@@ -1,30 +1,39 @@
-/**
- * Sample API for <MY_CLASS>
- */
+#ifndef GradeCalculator_H
+#define GradeCalculator_H
 
-#ifndef MY_CLASS
-#define MY_CLASS
-
-class MY_CLASS /* is a */ : PARENT_CLASS
+class GradeCalc 
 {
-    /**
-     * At a minimum, include:
-     * 1) 1 or more Constructor (Apply Rule of 3 if needed); 
-     * 2) Public Functions (minimum x2) including a non-trivial function
-     *    (e.g. not a simple getter/setter)
-     * 3) Private Data Members (minimum x2)
-     */
-public:
-    MY_CLASS();
-    MY_CLASS(int first, std::string second);
+    public: 
+    GradeCalc(); 
+    double CalcGrades(); 
+    virtual double printGrade(); 
+    void AskGrades();
+    private: 
+    double finalGrade;
+}
 
-    /* may be virtual */ bool do_something(string s);
-    int get_my_int();
+class Homework : public GradeCalc
+{
+    public: 
+    double HWAvg(); 
+    virtual double printGrade(); 
+    private: 
+    double HWScores[10];  
+}
 
-private:
+class Midterm : public GradeCalc
+{
+    public: 
+    double MTAvg(); 
+    virtual double printGrade(); 
+    private: 
+    double MTScores[2]; 
+}
 
-    int my_int;
-    std:string my_str;
-};
-
-#endif
+class Final : public GradeCalc 
+{
+    public: 
+    virtual double printFGrade(); 
+    private: 
+    double FinalScore; 
+}
